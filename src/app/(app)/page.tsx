@@ -2,7 +2,6 @@ import BarChart from "@/components/bar-chart";
 import Card, { CardContent, CardProps } from "@/components/card";
 import PageTitle from "@/components/page-title";
 import SalesCard, { SalesProps } from "@/components/sales-card";
-
 import { DollarSign, Users, CreditCard, Activity } from "lucide-react";
 
 const cardData: CardProps[] = [
@@ -60,10 +59,9 @@ const userSalesData: SalesProps[] = [
   },
 ];
 
-
 export default function HomePage() {
   return (
-    <div className="flex flex-col gap-5  w-full">
+    <div className="flex flex-col gap-5 w-full">
       <PageTitle title="Dashboard" />
       <section className="grid w-full grid-cols-1 gap-4 gap-x-8 transition-all sm:grid-cols-2 xl:grid-cols-4">
         {cardData.map((d, i) => (
@@ -79,13 +77,12 @@ export default function HomePage() {
       <section className="grid grid-cols-1 gap-4 gap-x-8 transition-all lg:grid-cols-2">
         <CardContent>
           <p className="p-4 font-semibold">Overview</p>
-
           <BarChart />
         </CardContent>
         <CardContent className="flex justify-between gap-4">
           <section>
             <p>Recent Sales</p>
-            <p className="text-sm text-gray-400">
+            <p className="text-sm text-gray-500">
               You made 265 sales this month.
             </p>
           </section>

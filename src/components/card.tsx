@@ -15,14 +15,12 @@ export default function Card(props: CardProps) {
   return (
     <CardContent>
       <section className="flex justify-between gap-2">
-        {/* label */}
         <p className="text-sm">{label}</p>
-        {/* icon */}
-        <LucideIcon className="h-4 w-4 text-gray-400" />
+        <LucideIcon className="h-4 w-4 text-gray-500" />
       </section>
       <section className="flex flex-col gap-1">
         <h2 className="text-2xl font-semibold">{amount}</h2>
-        <p className="text-xs text-gray-500">{description}</p>
+        <p className="text-xs text-gray-600">{description}</p>
       </section>
     </CardContent>
   );
