@@ -60,6 +60,7 @@ const userSalesData: SalesProps[] = [
   },
 ];
 
+
 export default function HomePage() {
   return (
     <div className="flex flex-col gap-5  w-full">
@@ -75,7 +76,7 @@ export default function HomePage() {
           />
         ))}
       </section>
-      <section className="grid grid-cols-1  gap-4 transition-all lg:grid-cols-2">
+      <section className="grid grid-cols-1 gap-4 gap-x-8 transition-all lg:grid-cols-2">
         <CardContent>
           <p className="p-4 font-semibold">Overview</p>
 
@@ -97,7 +98,6 @@ export default function HomePage() {
             />
           ))}
         </CardContent>
-        {/*  */}
       </section>
     </div>
   );
