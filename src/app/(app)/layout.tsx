@@ -30,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        suppressHydrationWarning
+        suppressHydrationWarning={true}
         className={cn("bg-white text-black flex min-h-screen", inter.className)}
       >
         <Sidebar />
