@@ -33,11 +33,12 @@ export default function Sidebar({}: Props) {
         {!mobileWidth && (
           <div className="absolute right-[-20px] top-7">
             <Button
+              aria-label="Toggle Sidebar Collapse"
               onClick={toggleCollapse}
               variant="secondary"
               className="rounded-full p-2"
             >
-              <ChevronRight />
+              <ChevronRight className={`${isCollapsed ? "" : "rotate-180"} transition-all duration-300`}/>
             </Button>
           </div>
         )}
