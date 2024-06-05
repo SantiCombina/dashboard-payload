@@ -1,10 +1,6 @@
-"use client";
-
 import { ColumnDef } from "@tanstack/react-table";
 import PageTitle from "@/components/page-title";
 import { DataTable } from "@/components/data-table";
-
-type Props = {};
 
 interface Setting {
   category: string;
@@ -21,6 +17,7 @@ const columns: ColumnDef<Setting>[] = [
     header: "Value",
   },
 ];
+
 const data: Setting[] = [
   {
     category: "Account",
@@ -40,7 +37,7 @@ const data: Setting[] = [
   },
 ];
 
-export default function SettingsPage({}: Props) {
+export default function SettingsPage() {
   return (
     <div className="flex flex-col gap-5  w-full">
       <PageTitle title="Settings" />
