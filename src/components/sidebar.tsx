@@ -14,10 +14,9 @@ import {
 } from "lucide-react";
 import { TooltipProvider } from "@radix-ui/react-tooltip";
 import { Button } from "./ui/button";
+import { cn } from "@/lib/utils";
 
-type Props = {};
-
-export default function Sidebar({}: Props) {
+export default function Sidebar() {
   const [isCollapsed, setisCollapsed] = useState(false);
 
   const onlyWidth = useWindowWidth();
@@ -38,7 +37,12 @@ export default function Sidebar({}: Props) {
               variant="secondary"
               className="rounded-full p-2"
             >
-              <ChevronRight className={`${isCollapsed ? "" : "rotate-180"} transition-all duration-300`}/>
+              <ChevronRight
+                className={cn(
+                  "trasition-all duration-300",
+                  isCollapsed ? "" : "rotate-180",
+                )}
+              />
             </Button>
           </div>
         )}

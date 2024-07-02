@@ -4,7 +4,6 @@ import { DataTable } from "@/components/data-table";
 import PageTitle from "@/components/page-title";
 import { ColumnDef } from "@tanstack/react-table";
 
-type Props = {};
 type Payment = {
   name: string;
   email: string;
@@ -22,7 +21,7 @@ const columns: ColumnDef<Payment>[] = [
           <img
             className="h-10 w-10"
             src={`https://api.dicebear.com/7.x/lorelei/svg?seed=${row.getValue(
-              "name"
+              "name",
             )}`}
             alt="user-image"
           />
@@ -138,7 +137,7 @@ const data: Payment[] = [
   },
 ];
 
-export default function UsersPage({}: Props) {
+export default function UsersPage() {
   return (
     <div className="flex flex-col gap-5 w-full">
       <PageTitle title="Users" />

@@ -1,6 +1,9 @@
+"use client";
+
 import { ColumnDef } from "@tanstack/react-table";
 import PageTitle from "@/components/page-title";
 import { DataTable } from "@/components/data-table";
+import ThemeSwitch from "@/components/theme-switch";
 
 interface Setting {
   category: string;
@@ -11,10 +14,19 @@ const columns: ColumnDef<Setting>[] = [
   {
     accessorKey: "category",
     header: "Category",
+    maxSize: 50,
   },
   {
     accessorKey: "value",
     header: "Value",
+    maxSize: 50,
+    cell: ({ row }) => {
+      const original = row.original;
+      if (original.category === "Theme") {
+        return <ThemeSwitch />;
+      }
+      return <span>{String(original.value)}</span>;
+    },
   },
 ];
 

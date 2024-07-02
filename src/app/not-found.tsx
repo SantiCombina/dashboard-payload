@@ -8,8 +8,8 @@ export default function NotFound() {
   return (
     <section
       className={cn(
-        "bg-white text-black min-h-screen justify-center items-center flex",
-        inter.className
+        "min-h-screen justify-center items-center flex",
+        inter.className,
       )}
     >
       <h1>404</h1>

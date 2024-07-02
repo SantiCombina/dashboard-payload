@@ -24,9 +24,9 @@ const columns: ColumnDef<Payment>[] = [
       return (
         <div
           className={cn("font-medium w-fit px-4 py-2 rounded-lg", {
-            "bg-red-200": row.getValue("status") === "Pending",
-            "bg-orange-200": row.getValue("status") === "Processing",
-            "bg-green-200": row.getValue("status") === "Completed",
+            "bg-red-300 text-black": row.getValue("status") === "Pending",
+            "bg-orange-300 text-black": row.getValue("status") === "Processing",
+            "bg-green-300 text-black": row.getValue("status") === "Completed",
           })}
         >
           {row.getValue("status")}
@@ -139,7 +139,7 @@ const data: Payment[] = [
 
 export default function OrdersPage() {
   return (
-    <div className="flex flex-col gap-5  w-full">
+    <div className="flex flex-col gap-5 w-full">
       <PageTitle title="Orders" />
       <DataTable columns={columns} data={data} />
     </div>

@@ -3,6 +3,7 @@ import "./globals.css";
 import Sidebar from "@/components/sidebar";
 import { cn } from "@/lib/utils";
 import { Inter } from "next/font/google";
+import { ThemeProvider } from "next-themes";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,10 +32,20 @@ export default function RootLayout({
     <html lang="en">
       <body
         suppressHydrationWarning={true}
-        className={cn("bg-white text-black flex min-h-screen", inter.className)}
+        className={cn(
+          "bg-background text-primary flex min-h-screen",
+          inter.className,
+        )}
       >
-        <Sidebar />
-        <div className="w-full p-8">{children}</div>
+        <ThemeProvider
+          attribute="class"
+          disableTransitionOnChange
+          defaultTheme="system"
+          enableSystem
+        >
+          <Sidebar />
+          <div className="w-full p-8">{children}</div>
+        </ThemeProvider>
       </body>
     </html>
   );
